@@ -41,7 +41,7 @@ Vagrant.configure("2") do |config|
         aws.secret_access_key = ENV["AWS_SECRET_ACCESS_KEY"]
         aws.keypair_name = ENV["AWS_KEYPAIR_NAME"]
         override.ssh.private_key_path = ENV["AWS_SSH_PRIVKEY"]
-        override.ssh.username = "ubuntu"
+        override.ssh.username = "ec2-user"
         aws.region = AWS_REGION
         aws.ami    = AWS_AMI
         aws.instance_type = AMI_INSTANCE_TYPE
@@ -50,7 +50,7 @@ Vagrant.configure("2") do |config|
         }
     end
 
-    config.vm.provision :shell, :path => "bootstrap-ubuntu.sh"
+    config.vm.provision :shell, :path => "bootstrap-centos.sh"
 
     if PUPPET_DEV == ''
         config.vm.provision :shell, :path => "install_puppet_modules.sh"
