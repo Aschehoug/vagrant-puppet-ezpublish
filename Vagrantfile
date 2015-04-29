@@ -6,17 +6,17 @@ PUPPET_DEV     = ENV['PUPPET_DEV'] || ''
 PUPPET_DEBUG   = ENV['PUPPET_DEBUG'] || ''
 
 # Virtualbox Environment overrides
-VB_NAME   = ENV['VB_NAME'] || "puppetlabs/centos-6.6-64-puppet"
-VB_URI    = ENV['VB_URI'] || "https://atlas.hashicorp.com/puppetlabs/boxes/centos-6.6-64-puppet/versions/1.0.1/providers/virtualbox.box"
-VB_IP     = ENV['VB_IP'] || "10.0.44.2"
+VB_NAME   = ENV['VB_NAME'] || "precise32"
+VB_URI    = ENV['VB_URI'] || "http://files.vagrantup.com/precise32.box"
+VB_IP     = ENV['VB_IP'] || "33.33.33.10"
 VB_MEMORY = ENV['VB_MEMORY'] || 1024
 
 
 # AWS
-AWS_REGION = ENV['AWS_REGION'] || "eu-west-1"
-AWS_AMI    = ENV['AWS_AMI']    || "ami-30ff5c47"
+AWS_REGION = ENV['AWS_REGION'] || "us-east-1"
+AWS_AMI    = ENV['AWS_AMI']    || "ami-a53264cc"
 AMI_INSTANCE_NAME = ENV['AWS_INSTANCE_NAME'] || "eZ Publish"
-AMI_INSTANCE_TYPE = ENV['AWS_INSTANCE_TYPE'] || "t2.micro"
+AMI_INSTANCE_TYPE = ENV['AWS_INSTANCE_TYPE'] || "m1.small"
 
 Vagrant.configure("2") do |config|
     config.vm.box     = VB_NAME
