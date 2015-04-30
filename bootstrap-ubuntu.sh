@@ -12,7 +12,7 @@ if [ ! -e ~/.bootstrap-vagrant ]; then
     apt-get update
     apt-get -y upgrade
 
-    apt-get -y install puppet
+    apt-get -y install puppet patch
 
     apt-get -y autoremove
 

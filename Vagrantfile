@@ -66,5 +66,7 @@ Vagrant.configure("2") do |config|
             puppet.options        = "--verbose --debug"
         end
     end
+    
+    config.vm.provision :shell, :path => "no_registration_patch.sh"
 
 end
