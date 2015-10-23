@@ -7,6 +7,27 @@ It's a quick and easy way to check out the a eZ Publish 5 version ( by
 default the latest community versions of eZ Publish 5 ) without the
 hassle of setting up a specific environment on your machine or in VM.
 
+Warning
+------------
+The second time you call vagrant up, setup fails with the following output:
+
+    The following SSH command responded with a non-zero exit status.
+    Vagrant assumes that this means the command failed!
+
+    /sbin/ifup eth1
+
+    Stdout from the command:
+
+
+
+    Stderr from the command:
+
+    stdin: is not a tty
+    /etc/network/interfaces:37: interface eth2 declared allow-auto twice
+    /sbin/ifup: couldn't read interfaces file "/etc/network/interfaces"
+
+You will then not be able to access the web server. This makes the Vagrant setup useless until fixed.
+
 Requirements
 ------------
 On your local machine install:
